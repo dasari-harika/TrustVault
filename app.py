@@ -20,6 +20,9 @@ DATABASE = Path("/tmp/trustvault.db")
 UPLOAD_DIR = Path("/tmp/private_uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
 app = Flask(__name__)
+@app.get("/")
+def home():
+    return send_from_directory(BASE_DIR, "index.html")
 app.config["SECRET_KEY"] = os.environ.get(
     "TRUSTVAULT_SECRET_KEY", secrets.token_hex(32)
 )
