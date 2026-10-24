@@ -15,7 +15,7 @@ from werkzeug.utils import secure_filename
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "private_uploads"
-DATABASE = BASE_DIR / "trustvault.db"
+DATABASE = Path("/tmp/trustvault.db")
 
 UPLOAD_DIR = Path("/tmp/private_uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
